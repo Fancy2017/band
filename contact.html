@@ -11,7 +11,7 @@
 			var xml=new XMLHttpRequest();
 			xml.onreadystatechange=function(){
 				if(xml.readystate==4&&xml.status==200){
-					document.getElementById("resp").innerHTML=responseText;
+					document.getElementById("resp").innerHTML=xml.responseText;
 				}
 			}
 			xml.open("get","resp.txt",true);
