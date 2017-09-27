@@ -6,6 +6,18 @@
 	<title>Jay Skript</title>
 	<script type="text/javascript" src="scripts/modernizr.custom.77578.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/basic.css">
+	<script type="text/javascript">
+		function aj(){
+			var xml=new XMLHttpRequest();
+			xml.onreadystatechange=function(){
+				if(xml.readystate==4&&xml.status==200){
+					document.getElementById("resp").innerHTML=responseText;
+				}
+			}
+			xml.open("get","resp.txt",true);
+			xml.send();
+		}
+	</script>
 </head>
 <body>
 <header>
@@ -39,6 +51,8 @@
 			<input type="submit" value="Send">
 		
 	</form>
+	<p id="resp"></p>
+	<button onclick="aj()">resp</button>
 </article>
 
 <script type="text/javascript" src="scripts/global.js"></script>
